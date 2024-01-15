@@ -1,10 +1,10 @@
 
 /* 
     Primitive data types:
-        // The predefined data types provided by JavaScript language are known as primitive data types. 
+        | The predefined data types provided by JavaScript language are known as primitive data types. 
         Primitive data types are also known as in-built data types.
 
-        // 7 Types : String; Number; Null; Undefine; Boolean; BigInt; Symbol
+        | 7 Types : String; Number; Null; Undefine; Boolean; BigInt; Symbol
 */
 
 const name = "ronit"; //string type [primitive]

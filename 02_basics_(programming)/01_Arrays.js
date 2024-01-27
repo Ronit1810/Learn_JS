@@ -23,7 +23,7 @@ console.log(newArray);
 const newArray2 = [5,9,6,3,5,4];
 console.log(newArray2);
 
-// Let us some of the methods of Arrays in JS
+// Let us some of the methods of array in JS
 
 //this push and pop will add or remove the last digit no.
 newArray.push(11); // ---------->  [ 5, 8, 4, 6, 3, 2, 11 ]
@@ -75,4 +75,38 @@ console.log(myn);//----------->  [0,1,2,3,4,5,6]
 console.log(myn.splice(1,3));//----------->  [ 1, 2, 3 ]
 console.log(myn);//----------->  [ 0, 4, 5, 6 ]
 
+//------------------------------------------------
+//push; concat; and spread-operator of Arrays
+const heros1 = ["ironman","thor","caption"];
+const heros2 = ["batman","superman","flash"];
+
+//push : Basically here the (heroes2) array is consider as one element therefore it is of 4 array length
+heros1.push(heros2);
+console.log(heros1);//----------> [ 'ironman', 'thor', 'caption', [ 'batman', 'superman', 'flash' ] ]
+console.log(heros1.length);//----------> 4
+
+//Concat : Basically it gives all new array combining all element,
+const heros3 = ["ironman","thor","caption"];
+const heros4 = ["batman","superman","flash"];
+const herosArrays = heros3.concat(heros4);
+console.log(herosArrays);// -------->[ 'ironman', 'thor', 'caption', 'batman', 'superman', 'flash' ]
+
+//Spread-operator : 
+const herosArrays1 = [...heros3, ...heros4];// we can add other arrays in once 
+console.log(herosArrays1);// -------->[ 'ironman', 'thor', 'caption', 'batman', 'superman', 'flash' ]
+
+//---------------------------------------------------
+//isArray; from; of, are used to check and convert in array
+
+//isArray : use to check whether the data is array or not
+console.log(Array.isArray("Ronit")); //give boolean values
+
+// from : it convert the data of any datatype in arrays
+console.log(Array.from("Ronit")); //----------------> [ 'R', 'o', 'n', 'i', 't' ]
+
+// of : convert different variable in arrays
+let a = 100;
+let b = 200;
+let c = 300;
+console.log(Array.of(a, b, c));// ---->[ 100, 200, 300 ]
 

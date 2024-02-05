@@ -97,3 +97,26 @@ console.log(Object.values(AppUser));//further this arrays are use by looping or 
 
 //we can also print/get a arrays of key-value pair of object
 console.log(Object.entries(AppUser));
+
+
+console.log("--");
+/*----------------------------PART_03-------------------------------------------------*/
+
+//Destructuring
+
+const course = {
+    courseName: "WebDev",
+    coursePrice: "1999",
+    courseInstructor: "Ronit"
+}
+
+console.log(course.courseInstructor);
+const {courseInstructor} = course;// here course is a object from where the courseInstructor value is extracted
+console.log(courseInstructor);
+
+const {courseName: otherName} = course; // we can also give customized name
+console.log(otherName);
+
+
+/*This destructuring is mostly important, in api calls when we get JSON data */
+

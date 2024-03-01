@@ -10,6 +10,11 @@
         | The Map object holds key-value pairs and remembers the original insertion order of the keys. 
         | Any value (both objects and primitive values) may be used as either a key or a value.
         | It do store duplicates and all the vales are unique.
+
+    > ForEach :
+        | The forEach() method is an iterative method. 
+        | It calls a provided callbackFn function once for each element in an array in ascending-index order. 
+        | Unlike map(), forEach() always returns undefined and is not chainable.
 */
 
 
@@ -41,8 +46,27 @@ console.log(MapArr);
 for (const [key, values] of MapArr) {
     console.log(key, 'of' , values);
 }
+console.log();
 
 
+const coding = ["Java","JavaScript","Python","CPP"];
+
+//Using function
+coding.forEach( function(val){
+    console.log(val);
+})
+console.log();
+
+//Using Arrow Function
+coding.forEach( (val)=>{
+    console.log(val);
+})
+
+//function Decleration
+function PrintIt(item,index,arr) {
+    console.log(item,index,arr);
+};
+coding.forEach(PrintIt)
 
 
 

@@ -68,5 +68,25 @@ function PrintIt(item,index,arr) {
 };
 coding.forEach(PrintIt)
 
+//Using forEach we can also iterate through array containing objects
+const Data = [
+    {
+        name: "Ronit",
+        language: "Java"
+    },
+    {
+        name: "Rohit",
+        language: "JavaScript"
+    },
+    {
+        name: "Nit",
+        language: "CPP"
+    },
+]
 
+Data.forEach((value) => {
+    console.log(value.name);
+    console.log(value);
+    console.log(value.language);
+})
 

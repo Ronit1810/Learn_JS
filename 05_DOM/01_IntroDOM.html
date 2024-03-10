@@ -1,0 +1,69 @@
+<!--
+    >Document Object Model (DOM) :
+        |The DOM represents a document with a logical tree. 
+         Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. 
+         With them, you can change the document's structure, style, or content.
+    
+        >DOM Selectors
+        (1) document:
+            The document object represents your web page.
+            If you want to access any element in an HTML page, you always start with accessing the document object.
+
+        (2) document.getElementById(id): Find an element by element id
+
+        (3) document.getElementsByTagName(name) : Find elements by tag name
+
+        (4) document.getElementsByClassName(name) : Find elements by class name
+
+        (5) element.setAttribute(attribute, value) : Change the attribute value of an HTML element , it always overwrite the attribute
+                                                     Eg: document.getElementById(id).setAttribute('class', 'test')
+        
+        (6) element.style.property = new style : Change the style of an HTML element
+                                                 Eg: document.getElementById(id).style.backgroundColor = 'red'
+
+        (7) element.innerHTML ; element.textContent ; element.innerText :
+            This all show inner HTML element
+            But the main difference is (i) innerText show only the text which is displayed on screen, (ii) textContent will show all the text available
+            (iii)innerHTML will show full HTML even HTML present in it, basically it support HTML tag also.
+        
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        (8) document.querySelector('selector') : 
+            | The Document method querySelector() returns the only first Element within the document that matches the specified selector, or group of selectors. 
+            If no matches are found, null is returned.
+            | In selector you can follow css selector rules (such as for ID we use '#' and for class we use '.')
+
+        (9) Document: querySelectorAll('') :
+            | The Document method querySelectorAll() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.
+            | A non-live NodeList containing one Element object for each element that matches at least one of the specified selectors or an empty NodeList in case of no matches.
+            NOTE- NodeList looks like an array but it not an perfect array, it similar to array
+
+        (10) Array.from()
+              | This method is use to convert the list of data into Array so that we can apply all the method of Arrays 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document Object Model</title>
+    <style>
+      .main {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="main">
+    <div>
+      <h1 class="heading" id="title">Document Object Model (DOM)</h1>
+      <p class="text" id="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <h2 class="MyText">1 Lorem ipsum dolor sit amet.</h2>
+      <h2 class="MyText">2 Lorem ipsum dolor sit amet.</h2>
+      <h2 class="MyText">3 Lorem ipsum dolor sit amet.</h2>
+      <h2 class="MyText">4 Lorem ipsum dolor sit amet.</h2>
+    </div>
+  </body>
+</html>

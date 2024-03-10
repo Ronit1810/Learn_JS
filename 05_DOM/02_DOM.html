@@ -1,0 +1,62 @@
+<!--
+    > JavaScript in HTML.
+    > .childern element
+    > parent-child relation
+        - firstElementChild
+        - lastElementChild
+        - parentElement
+        - nextElementSibling
+        - previousElementSibiling
+    > childNodes
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chapter_02</title>
+</head>
+<body style="background-color: black; color: white;">
+
+    <!--Basically here you will see that the div with the class 'parent' is a parent class of
+    its sub div i.e., div with class 'day'-->
+
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const value = document.querySelector('.parent')
+    console.log(value);
+
+    console.log(value.children)
+    //As it give HTMLCollection as it is Array like, so we can apply indexing
+    console.log(value.children[0].innerHTML);//we use childern to access first div of parent class
+
+    for (let index = 0; index < value.children.length; index++) {
+        console.log(value.children[index].innerHTML);   
+    }
+
+    //Styling 
+    value.children[0].style.color='red'
+
+    //Accessing first and last element of parent div(i.e. monday & thursday)
+    console.log(value.firstElementChild);
+    console.log(value.lastElementChild);
+
+    //we can also go from child div to parent div using 'parentElement'
+    const childValue = document.querySelector('.day')
+    console.log(childValue);
+    console.log(childValue.parentElement);
+    console.log(childValue.nextElementSibling);
+
+    //as we know everthing is in tree model therfore below 'childNodes' show all the nodes
+    console.log(value.childNodes);
+</script>
+</html>

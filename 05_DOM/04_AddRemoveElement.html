@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | 04_Add & Remove</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="list">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    const addItem = (language) => {
+        const item = document.createElement('li')//step-1:creating element (i.e. li)
+        item.innerHTML = `${language}`// step-2:adding text
+        document.querySelector('.list').appendChild(item)// step-3:add/display
+    }
+    addItem('java')
+
+    //As above solution traverse all over the tree it may cause issue in large data
+    //Let us see more optimized solution to add an element
+    const addItemOptimized = (language)=>{
+        const item = document.createElement('li');
+        item.appendChild(document.createTextNode(language))
+        document.querySelector('.list').appendChild(item)
+    }
+    addItemOptimized("html")
+
+    //Edit
+    const firstItem = document.querySelector("li:nth-child(1)");
+    // firstItem.innerHTML = 'data'
+    const newli = document.createElement('li');
+    // newli.textContent = 'data'
+    newli.appendChild(document.createTextNode('data'))
+    firstItem.replaceWith(newli)
+
+    //Remove
+    const lastItem = document.querySelector("li:last-child")
+    lastItem.remove()
+</script>
+</html>

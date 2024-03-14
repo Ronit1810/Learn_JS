@@ -1,0 +1,55 @@
+<!--
+    > XMLHttpRequest:
+        XMLHttpRequest (XHR) objects are used to interact with servers. 
+        You can retrieve data from a URL without having to do a full page refresh. 
+        This enables a Web page to update just part of a page without disrupting what the user is doing.
+
+    > open():
+        The XMLHttpRequest method open() initializes a newly-created request, or re-initializes an existing one.
+
+    > send():
+        The XMLHttpRequest method send() sends the request to the server.
+        | If the request is asynchronous (which is the default), this method returns as soon as the request is sent and the result is delivered using events. 
+            If the request is synchronous, this method doesn't return until the response has arrived.
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="card" style="display: flex; flex-flow: column; align-items: center; justify-content: center; justify-items: center; height: 300px; width: 250px; background-color: #212121;">
+        <div class="img" >
+            <img style="width: 200px; height: 200px;" src="" alt="image">
+        </div>
+        <div class="name">
+            <h1></h1>
+        </div>
+    </div>
+</body>
+<script>
+    let getData
+    const profileUrl = "https://api.github.com/users/Ronit1810"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', profileUrl)
+    xhr.onreadystatechange = function () { //help to continuously track the state
+        console.log(xhr.readyState) // readyState is current state
+        if (xhr.readyState === 4) {
+            getData = JSON.parse(this.response)
+            // console.log(Data);
+            document.querySelector('img').src = `${getData.avatar_url}`
+            document.querySelector('h1').innerHTML = `${getData.name}`
+        }
+    }
+    xhr.send()
+    // console.log(typeof getData);
+    // document.querySelector('img')
+</script>
+</html>
